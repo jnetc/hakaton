@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "outDir": "./scripts", // Folder where the compiled JS files will be output
+    "rootDir": "./src", // Root folder of the project where the source files are located
+    "sourceMap": true, // Generate sourcemaps for debugging
+    "strict": true, // Enable strict compilation mode
+    "target": "ES2017", // Target version of JavaScript
+    "module": "ESNext", // Module system
+    "allowJs": true, // Allows compiling .js files
+    "skipLibCheck": true, // Skip type checking in declaration files
+    "forceConsistentCasingInFileNames": true, // Ensures consistent casing in file names
+    "noEmit": false, // Allows the generation of output files
+    "esModuleInterop": true, // Compatibility with ES6 modules
+    "moduleResolution": "node", // Module resolution strategy
+    "resolveJsonModule": true, // Resolve JSON modules
+    "isolatedModules": true, // Compiles each file as a separate module
+    "incremental": false, // Incremental compilation; true will create .tsbuildinfo files
+    "baseUrl": ".", // Base directory for module resolution
+    "noFallthroughCasesInSwitch": true, // Disallows fallthrough to the next case in switch
+    "noUnusedLocals": true, // Errors on unused local variables
+    "noUnusedParameters": true, // Errors on unused function parameters
+    "pretty": true, // Format error messages
+    "verbatimModuleSyntax": false, // Preserves the original module syntax
+    "allowImportingTsExtensions": false, // Allow importing .ts files
+    "lib": ["dom", "dom.iterable", "esnext"], // Libraries used
+    "paths": {
+      "@Scripts/*": ["./scripts/*"]
+    }
+  },
+  "include": ["src/**/*"], // Includes files from the src folder
+  "exclude": ["node_modules"] // Excludes the node_modules folder
+}

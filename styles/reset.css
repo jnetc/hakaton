@@ -1,0 +1,167 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  /* outline: 1px solid red; */
+  /* overscroll-behavior: contain; */
+}
+* {
+  margin: 0;
+  /* outline: 1px solid red; */
+  /* overscroll-behavior: contain; */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  /* scroll-behavior: smooth; */
+  scrollbar-gutter: stable;
+  text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  --side-size: auto;
+  --content-size: 1200px;
+
+  min-block-size: 100dvh;
+  display: grid;
+  grid-template-columns: var(--side-size) minmax(0, var(--content-size)) var(--side-size);
+  grid-template-rows: min-content 1fr min-content;
+  column-gap: var(--gap-48);
+  position: relative;
+  color: var(--black);
+  background-color: #fafafa;
+  font-family: 'Roboto', sans-serif;
+  text-rendering: optimizeSpeed;
+  scrollbar-gutter: stable;
+
+  & > :where(header, footer) {
+    grid-column: 2;
+  }
+}
+
+input,
+textarea,
+button,
+select {
+  font: inherit;
+}
+
+/* GLOBAL MEDIA */
+img,
+picture,
+svg,
+video,
+canvas {
+  display: block;
+  max-inline-size: 100%;
+}
+
+img,
+svg,
+label,
+legend,
+button {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* GLOBAL TEXT */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  line-height: 1.2;
+}
+
+p,
+strong {
+  line-height: 1.5;
+}
+
+input,
+textarea {
+  font-weight: 300;
+}
+
+p,
+span,
+figcaption {
+  text-wrap: pretty;
+  max-inline-size: 65ch;
+}
+
+p,
+label,
+li,
+time {
+  color: var(--grey-500);
+  font-size: var(--font-18);
+}
+
+/* Margin top to make gap as 80px down */
+:target {
+  scroll-margin-top: var(--gap-80);
+}
+
+input,
+textarea,
+fieldset,
+select,
+button,
+dialog {
+  border: none;
+}
+/* input:focus-visible, */
+button:focus-visible,
+a:focus-visible {
+  outline: 1.5px solid var(--black);
+  outline-offset: 0.25rem;
+}
+
+select,
+button {
+  appearance: none;
+  background-color: transparent;
+  outline-color: var(--black);
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+strong {
+  color: var(--grey-500);
+}
+
+blockquote {
+  hanging-punctuation: first last;
+}
+
+header a {
+  text-decoration: none;
+}
+
+[class*='icon'] {
+  pointer-events: none;
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    column-gap: var(--gap-20);
+  }
+}
