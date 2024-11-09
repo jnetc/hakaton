@@ -4,6 +4,7 @@
 /* @import url('section-hero.css'); */
 @import url('sidebar.css');
 @import url('card.css');
+@import url('btns.css');
 
 body {
   --side-size: auto;
@@ -66,14 +67,17 @@ body {
 .complains {
   & .scroll-area {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--gap-18);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--gap-32);
   }
 }
 
 .sidebar {
-  display: grid;
-  min-inline-size: 100%;
+  & .scroll-area {
+    display: grid;
+    row-gap: var(--gap-96);
+    padding-inline: var(--gap-8);
+  }
 }
 
 @media screen and (max-width: 1024px) {

@@ -1,0 +1,29 @@
+.btn {
+  align-self: flex-end;
+  padding-block: 0.75rem;
+  padding-inline: var(--gap-20);
+  border-radius: 50vw;
+  font-size: var(--font-18);
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+
+  &[href] {
+    text-decoration: none;
+  }
+}
+
+.wa-btn {
+  background-color: var(--whatsapp-dark-green);
+  color: var(--white);
+}
+
+.border-prymary-btn {
+  color: var(--black);
+  border: 2px solid var(--primary);
+}
+
+.prymary-btn {
+  color: var(--black);
+  background-color: var(--primary);
+}

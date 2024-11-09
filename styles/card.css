@@ -27,29 +27,11 @@ article {
     font-weight: 400;
   }
 
-  .btn {
-    align-self: flex-end;
-    padding-block: 0.75rem;
-    padding-inline: var(--gap-20);
-    border-radius: 50vw;
-    font-size: var(--font-18);
-    font-weight: bold;
-    text-align: center;
-    white-space: nowrap;
-
-    &[href] {
-      text-decoration: none;
-    }
-  }
   .wa-btn {
     grid-column: 2;
-    background-color: var(--whatsapp-dark-green);
-    color: var(--white);
   }
 
-  .map-btn {
+  .border-prymary-btn {
     grid-column: 3;
-    color: var(--black);
-    border: 2px solid var(--primary);
   }
 }

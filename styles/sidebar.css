@@ -1,13 +1,75 @@
+.form {
+  display: grid;
+  row-gap: var(--gap-18);
+}
+
+.form__block {
+  display: grid;
+  row-gap: var(--gap-8);
+}
+
+.image-preview {
+  block-size: 280px;
+  inline-size: 100%;
+  position: relative;
+  border: 2px dashed var(--primary);
+  border-radius: var(--border-corner-12);
+
+  &:has(img) {
+    border: none;
+  }
+  &:has(img) span {
+    display: none;
+  }
+
+  & span {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    color: var(--primary);
+    font-size: var(--font-20);
+  }
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: inherit;
+  }
+
+  & input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    z-index: 100;
+  }
+}
+
+#message {
+  border-radius: var(--border-corner-8);
+  border: 1px solid var(--black);
+  /* background-color: var(--secondary); */
+  resize: none;
+}
+
 .faq {
   block-size: min-content;
   display: grid;
   row-gap: var(--gap-24);
 
+  & h2 {
+    color: var(--grey-500);
+    font-size: clamp(var(--font-28), 5vw, var(--font-36));
+    text-align: center;
+  }
+
   & summary {
     padding: var(--gap-16) var(--gap-16);
     color: var(--grey-500);
-    border-radius: var(--border-corner-6);
-    background-color: var(--secondary);
+    border-radius: var(--border-corner-12);
+    background-color: hsl(from var(--primary) h s l / 25%);
     font-size: clamp(var(--font-20), 4vw, var(--font-24));
     cursor: pointer;
   }
