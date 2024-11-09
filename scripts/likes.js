@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const formatNumber = (number) => {
         if (number < 1000)
-            return number.toString(); // Меньше тысячи, возвращаем как есть
+            return number.toString();
         if (number < 1000000)
-            return `${(number / 1000).toFixed(1)}k`; // От 1000 до миллиона, формат "3.4k"
-        return `${(number / 1000000).toFixed(1)}M`; // Миллион и выше, формат "1.2M"
+            return `${(number / 1000).toFixed(1)}k`;
+        return `${(number / 1000000).toFixed(1)}M`;
     };
 });
 //# sourceMappingURL=likes.js.map
