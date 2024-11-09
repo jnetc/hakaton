@@ -1,3 +1,9 @@
+.sidebar h2 {
+  color: var(--grey-500);
+  font-size: clamp(var(--font-28), 5vw, var(--font-36));
+  text-align: center;
+}
+
 .form {
   display: grid;
   row-gap: var(--gap-18);
@@ -48,22 +54,21 @@
 }
 
 #message {
+  padding: var(--gap-12);
   border-radius: var(--border-corner-8);
   border: 1px solid var(--black);
-  /* background-color: var(--secondary); */
+  font-size: var(--font-18);
   resize: none;
+}
+
+form .prymary-btn {
+  padding-block: var(--gap-20);
 }
 
 .faq {
   block-size: min-content;
   display: grid;
   row-gap: var(--gap-24);
-
-  & h2 {
-    color: var(--grey-500);
-    font-size: clamp(var(--font-28), 5vw, var(--font-36));
-    text-align: center;
-  }
 
   & summary {
     padding: var(--gap-16) var(--gap-16);
