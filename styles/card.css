@@ -2,8 +2,8 @@ article {
   max-inline-size: 50%;
   display: grid;
   grid-template-columns: auto 1fr auto auto;
-  row-gap: var(--gap-8);
   column-gap: var(--gap-20);
+  position: relative;
   border-radius: var(--border-corner-16);
   background-color: hsl(from var(--primary) h s l / 10%);
   padding-block-end: var(--gap-32);
@@ -15,16 +15,30 @@ article {
     grid-column: 2 / -2;
   }
 
+  & .btn-like {
+    position: absolute;
+    top: var(--gap-8);
+    right: var(--gap-8);
+    z-index: 1;
+    background-color: red;
+  }
   & img {
     height: 260px;
+    border-top-left-radius: var(--border-corner-16);
+    border-top-right-radius: var(--border-corner-16);
     object-fit: cover;
     object-position: center;
   }
 
   h2 {
+    padding-block: var(--gap-16) var(--gap-8);
     color: var(--grey-500);
     font-size: clamp(var(--font-20), 7vw, var(--font-24));
     font-weight: 400;
+  }
+
+  p {
+    padding-block-end: var(--gap-12);
   }
 
   .wa-btn {

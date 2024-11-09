@@ -2,7 +2,7 @@
   align-self: flex-end;
   padding-block: 0.75rem;
   padding-inline: var(--gap-20);
-  border-radius: 50vw;
+  border-radius: var(--border-corner-12);
   font-size: var(--font-18);
   font-weight: bold;
   text-align: center;
