@@ -1,13 +1,21 @@
 .header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding-block-start: var(--gap-16);
+  padding-block-start: var(--gap-8);
+  row-gap: var(--gap-8);
+}
+.logo {
+  flex: 1 1 100%;
+  color: var(--black);
+  font-size: var(--font-24);
+  font-weight: bold;
 }
 
 .tabs {
   inline-size: 100%;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }
@@ -26,4 +34,13 @@
 .tab:has(:checked) {
   color: var(--white);
   background-color: var(--primary);
+}
+
+@media screen and (max-width: 1024px) {
+  /* .logo {
+    display: none;
+  } */
+  .tabs {
+    display: flex;
+  }
 }

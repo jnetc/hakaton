@@ -28,12 +28,6 @@ body {
   }
 }
 
-.green-dark {
-  color: var(--green-dark);
-}
-.green-light {
-  color: var(--green-light);
-}
 .green-wa {
   color: var(--whatsapp-dark-green);
 }
@@ -54,13 +48,15 @@ body {
 }
 
 .scroll-area {
-  max-height: 90vh;
+  --header-height: 52px;
+  --footer-height: 36px;
+
+  max-height: calc(100dvh - var(--header-height) - var(--footer-height));
   overflow-y: auto;
   overflow-x: hidden;
-  padding-right: 16px;
   & > * {
     min-inline-size: 100%;
-    padding-block-start: var(--gap-24);
+    padding-block: var(--gap-24);
   }
 }
 
@@ -92,7 +88,9 @@ body {
   }
 
   .scroll-area {
-    max-height: 90vh;
+    --header-height: 96px;
+    --footer-height: 36px;
+
     overflow-y: auto;
     overflow-x: hidden;
     & > * {
