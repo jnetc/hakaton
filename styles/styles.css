@@ -1,7 +1,6 @@
 @import url('varibles.css');
 @import url('reset.css');
 @import url('header.css');
-/* @import url('section-hero.css'); */
 @import url('sidebar.css');
 @import url('card.css');
 @import url('btns.css');
@@ -144,65 +143,6 @@ body {
     inset-block-end: 1rem;
   }
 }
-
-.select-city {
-  min-inline-size: 250px;
-  position: relative;
-  font-size: var(--font-24);
-  border-radius: var(--border-corner-8);
-  border: 1px solid var(--black);
-
-  & .icon {
-    inline-size: var(--font-24);
-    aspect-ratio: 1;
-    position: absolute;
-    inset-inline-end: 0.75rem;
-    inset-block: 0.85rem;
-  }
-
-  & select {
-    padding: var(--gap-12);
-    min-inline-size: 100%;
-  }
-}
-
-/* SECTION */
-section.block {
-  display: grid;
-  row-gap: var(--gap-72);
-  justify-items: center;
-}
-
-/* section TAKE ACTION */
-#take-action {
-  container: take-action / inline-size;
-}
-.step {
-  max-inline-size: 960px;
-  display: flex;
-  gap: var(--gap-48);
-  align-items: center;
-  justify-items: center;
-
-  &:nth-of-type(1) {
-    margin-block-end: var(--gap-80);
-  }
-
-  & h2 {
-    flex: 0 1 auto;
-    color: var(--grey-500);
-    font-size: clamp(var(--font-24), 4vw, var(--font-32));
-    font-weight: 400;
-    margin-inline: auto;
-    line-height: 1.5;
-  }
-
-  & .phone {
-    min-inline-size: 270px;
-  }
-}
-
-/* section FAQ */
 
 .footer {
   text-align: center;
