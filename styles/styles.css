@@ -3,6 +3,43 @@
 @import url('header.css');
 @import url('section-hero.css');
 
+body {
+  --side-size: auto;
+  --body-size: 1440px;
+
+  min-block-size: 100dvh;
+  display: grid;
+  grid-template-columns:
+    var(--side-size)
+    minmax(0, var(--body-size))
+    var(--side-size);
+  grid-template-rows: min-content 1fr min-content;
+  column-gap: var(--gap-20);
+  position: relative;
+  color: var(--black);
+  background-color: #fafafa;
+  font-family: 'Roboto', sans-serif;
+  text-rendering: optimizeSpeed;
+  scrollbar-gutter: stable;
+  /* transition: 0.3s; */
+  overflow: hidden;
+
+  & > :where(header, footer, main) {
+    grid-column: 2 / -2;
+  }
+
+  /* & > main {
+    min-inline-size: 100%;
+    grid-column: 2;
+    overflow: hidden;
+  }
+  & > aside {
+    min-inline-size: 100%;
+    grid-column: 3;
+    overflow: hidden;
+  } */
+}
+
 .green-dark {
   color: var(--green-dark);
 }
@@ -17,14 +54,64 @@
 }
 
 .main {
-  grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: subgrid;
-  row-gap: var(--gap-224);
-  padding-block-end: var(--gap-176);
+  grid-template-columns: 1fr 460px;
+  column-gap: var(--gap-48);
+  overflow: hidden;
+  transition: 500ms;
 
-  & > section:not(.hero) {
-    grid-column: 2;
+  & :where(.complains, .sidebar) {
+    transition: 300ms;
+    overflow: auto;
+    /* overflow: hidden; */
+  }
+}
+
+.scroll-area {
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 16px;
+  & > * {
+    min-inline-size: 100%;
+  }
+}
+
+.complains {
+  display: grid;
+}
+
+.sidebar {
+  display: grid;
+  min-inline-size: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    --side-size: var(--gap-20);
+    column-gap: 0;
+  }
+
+  .header:has([id='main-flow']:checked) ~ .main {
+    grid-template-columns: 1fr 0fr;
+  }
+
+  .header:has([id='sidebar-flow']:checked) ~ .main {
+    grid-template-columns: 0fr 1fr;
+  }
+
+  .main {
+    column-gap: 0;
+  }
+
+  .scroll-area {
+    max-height: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 16px;
+    & > * {
+      min-inline-size: calc(100vw - var(--gap-20) * 2);
+    }
   }
 }
 
@@ -143,28 +230,20 @@ h2 {
     min-inline-size: 270px;
   }
 }
-@container take-action (max-inline-size: 680px) {
-  .step {
-    flex-wrap: wrap;
-    margin-inline: auto;
-
-    & h3 {
-      text-align: center;
-    }
-
-    &:nth-of-type(1) {
-      flex-direction: column-reverse;
-    }
-
-    & .phone {
-      margin-inline: auto;
-    }
-  }
-}
 
 /* section FAQ */
-#faq {
-  container: faq / inline-size;
+.faq {
+  block-size: min-content;
+  display: grid;
+  row-gap: var(--gap-24);
+
+  & summary {
+    padding-block-end: var(--gap-16);
+    /* list-style: none; */
+    color: var(--grey-500);
+    font-size: clamp(var(--font-20), 4vw, var(--font-24));
+    cursor: pointer;
+  }
 }
 .qa-block {
   inline-size: 100%;
@@ -200,18 +279,6 @@ h2 {
     }
     &:nth-of-type(6) {
       rotate: 4.3deg;
-    }
-  }
-}
-@container faq (max-inline-size: 960px) {
-  .qa-block {
-    grid-template-columns: 1fr;
-
-    & article {
-      justify-self: center;
-      &:nth-of-type(even) {
-        justify-self: center;
-      }
     }
   }
 }

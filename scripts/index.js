@@ -1,5 +1,5 @@
 "use strict";
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Hello, World!');
+    console.log('hello');
 });
 //# sourceMappingURL=index.js.map

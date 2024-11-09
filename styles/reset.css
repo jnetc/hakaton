@@ -26,27 +26,6 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
-body {
-  --side-size: auto;
-  --content-size: 1200px;
-
-  min-block-size: 100dvh;
-  display: grid;
-  grid-template-columns: var(--side-size) minmax(0, var(--content-size)) var(--side-size);
-  grid-template-rows: min-content 1fr min-content;
-  column-gap: var(--gap-48);
-  position: relative;
-  color: var(--black);
-  background-color: #fafafa;
-  font-family: 'Roboto', sans-serif;
-  text-rendering: optimizeSpeed;
-  scrollbar-gutter: stable;
-
-  & > :where(header, footer) {
-    grid-column: 2;
-  }
-}
-
 input,
 textarea,
 button,
@@ -158,10 +137,4 @@ header a {
 
 [class*='icon'] {
   pointer-events: none;
-}
-
-@media screen and (max-width: 480px) {
-  body {
-    column-gap: var(--gap-20);
-  }
 }
