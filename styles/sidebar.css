@@ -62,9 +62,60 @@
 }
 
 form .prymary-btn {
+  margin-block-start: var(--gap-18);
   padding-block: var(--gap-20);
 }
 
+/* STATISTICS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--gap-24);
+
+  & h2 {
+    grid-column: 1 / -1;
+  }
+}
+
+.stats__card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  gap: var(--gap-4) var(--gap-16);
+  border-radius: var(--border-corner-12);
+
+  & p {
+    line-height: 1;
+  }
+
+  & .stats__title {
+    align-self: flex-end;
+    font-size: var(--font-20);
+  }
+  & .stats__value {
+    font-size: var(--font-28);
+    font-weight: bold;
+  }
+}
+
+.stats__icon {
+  grid-column: 1;
+  grid-row: 1 / -1;
+  inline-size: var(--size-64);
+  aspect-ratio: 1;
+  display: grid;
+  place-content: center;
+  border-radius: 50vw;
+  background-color: hsl(from var(--primary) h s l / 10%);
+
+  & .icon {
+    inline-size: var(--font-32);
+    aspect-ratio: 1;
+    fill: var(--grey-500);
+  }
+}
+
+/* HELP CENTER*/
 .faq {
   block-size: min-content;
   display: grid;
