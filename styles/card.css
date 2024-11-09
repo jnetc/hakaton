@@ -1,18 +1,18 @@
 article {
   max-inline-size: 50%;
   display: grid;
-  grid-template-columns: 1fr var(--size-48);
+  grid-template-columns: auto 1fr auto auto;
   row-gap: var(--gap-8);
+  column-gap: var(--gap-20);
   border-radius: var(--border-corner-16);
   background-color: var(--secondary);
   padding-block-end: var(--gap-32);
 
-  & :where(img, p, h2) {
+  & :where(img) {
     grid-column: 1 / -1;
   }
-
-  & :where(p, h2) {
-    padding-inline: var(--gap-20);
+  & :where(p, h2, a) {
+    grid-column: 2 / -2;
   }
 
   & img {
@@ -25,5 +25,38 @@ article {
     color: var(--grey-500);
     font-size: clamp(var(--font-20), 7vw, var(--font-24));
     font-weight: 400;
+  }
+
+  .wa-btn {
+    grid-column: 2;
+    padding-block: 0.75rem;
+    background-color: var(--whatsapp-dark-green);
+    border-radius: 50vw;
+    color: var(--white);
+    font-size: var(--font-18);
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+
+    &[href] {
+      text-decoration: none;
+    }
+  }
+
+  .map-btn {
+    grid-column: 3;
+    padding-block: 0.75rem;
+    padding-inline: var(--gap-20);
+    background-color: var(--whatsapp-dark-green);
+    border-radius: 50vw;
+    color: var(--white);
+    font-size: var(--font-18);
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+
+    &[href] {
+      text-decoration: none;
+    }
   }
 }

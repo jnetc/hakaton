@@ -105,23 +105,6 @@ body {
   }
 }
 
-.btn {
-  inline-size: fit-content;
-  padding: 1.225rem 2.25rem;
-  background-color: var(--whatsapp-dark-green);
-  border-radius: 50vw;
-  color: var(--white);
-  font-size: var(--font-24);
-  font-weight: bold;
-  text-align: center;
-  white-space: nowrap;
-  cursor: pointer;
-
-  &[href] {
-    text-decoration: none;
-  }
-}
-
 .phone {
   grid-area: phone;
   justify-self: center;
