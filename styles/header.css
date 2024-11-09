@@ -4,13 +4,13 @@
   justify-content: space-between;
   align-items: center;
   padding-block-start: var(--gap-8);
-  row-gap: var(--gap-8);
 }
 .logo {
   flex: 1 1 100%;
   color: var(--black);
   font-size: var(--font-24);
   font-weight: bold;
+  padding-block-end: var(--gap-8);
 }
 
 .tabs {
@@ -37,9 +37,6 @@
 }
 
 @media screen and (max-width: 1024px) {
-  /* .logo {
-    display: none;
-  } */
   .tabs {
     display: flex;
   }

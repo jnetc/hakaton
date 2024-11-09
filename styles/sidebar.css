@@ -1,0 +1,18 @@
+.faq {
+  block-size: min-content;
+  display: grid;
+  row-gap: var(--gap-24);
+
+  & summary {
+    padding: var(--gap-16) var(--gap-16);
+    color: var(--grey-500);
+    border-radius: var(--border-corner-6);
+    background-color: var(--secondary);
+    font-size: clamp(var(--font-20), 4vw, var(--font-24));
+    cursor: pointer;
+  }
+
+  & p {
+    padding-inline: var(--gap-16);
+  }
+}
