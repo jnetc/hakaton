@@ -27,13 +27,19 @@ article {
     background-color: hsl(from var(--secondary) h s l / 50%);
     top: var(--gap-16);
     right: var(--gap-16);
+    transition: 0.3s ease-in-out;
     z-index: 100;
+
+    &:active {
+      background-color: hsl(from var(--secondary) h s l / 100%);
+    }
 
     & span {
       color: var(--black);
       font-size: var(--font-16);
       font-weight: bold;
     }
+
     & .icon {
       inline-size: var(--font-32);
       aspect-ratio: 1;
