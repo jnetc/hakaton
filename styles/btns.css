@@ -16,6 +16,10 @@
 .wa-btn {
   background-color: var(--whatsapp-dark-green);
   color: var(--white);
+
+  &:active {
+    background-color: hsl(from var(--whatsapp-dark-green) h s l / 85%);
+  }
 }
 
 .border-prymary-btn {
@@ -26,4 +30,8 @@
 .prymary-btn {
   color: var(--black);
   background-color: var(--primary);
+
+  &:active {
+    background-color: hsl(from var(--primary) h s l / 85%);
+  }
 }
