@@ -1,12 +1,14 @@
 article {
-  max-inline-size: 50%;
+  container-type: inline-size;
   display: grid;
   grid-template-columns: auto 1fr auto auto;
+  grid-template-rows: max-content min-content auto auto auto;
   column-gap: var(--gap-20);
   position: relative;
   border-radius: var(--border-corner-16);
   background-color: hsl(from var(--primary) h s l / 10%);
   padding-block-end: var(--gap-32);
+  row-gap: var(--gap-12);
 
   & :where(img) {
     grid-column: 1 / -1;
@@ -38,23 +40,24 @@ article {
       fill: var(--black);
     }
   }
+
   & img {
-    height: 260px;
+    height: 100%;
     border-top-left-radius: var(--border-corner-16);
     border-top-right-radius: var(--border-corner-16);
     object-fit: cover;
-    object-position: center;
   }
 
   h2 {
-    padding-block: var(--gap-16) var(--gap-8);
+    padding-block: var(--gap-8) var(--gap-4);
     color: var(--grey-500);
-    font-size: clamp(var(--font-20), 7vw, var(--font-24));
+    font-size: clamp(var(--font-20), 5vw, var(--font-24));
     font-weight: 400;
   }
 
   p {
-    padding-block-end: var(--gap-12);
+    padding-block-end: var(--gap-18);
+    font-size: clamp(var(--font-16), 4vw, var(--font-18));
   }
 
   .wa-btn {
@@ -63,5 +66,19 @@ article {
 
   .border-prymary-btn {
     grid-column: 3;
+  }
+}
+
+@container (max-width: 360px) {
+  article {
+    grid-template-columns: auto 1fr auto;
+
+    & :where(p, h2, a) {
+      grid-column: 2;
+    }
+
+    & :is(.wa-btn, .border-prymary-btn) {
+      grid-column: 2;
+    }
   }
 }

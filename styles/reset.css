@@ -7,8 +7,6 @@
 }
 * {
   margin: 0;
-  /* outline: 1px solid red; */
-  /* overscroll-behavior: contain; */
 }
 
 @media (prefers-reduced-motion: reduce) {
